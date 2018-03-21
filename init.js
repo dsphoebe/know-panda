@@ -15,6 +15,21 @@ const promisify = require('./app/utils/promisify').default;
 })
 
 export const request = (obj = {}) => {
-  const url = `https://panda.20170326.com/api/wx/${obj.url}`
-  return wx.request(Object.assign(obj, {url}))
+  let {url, ...rest} = obj
+  url = `https://panda.20170326.com/api/wx/${url}`
+  wx.request({
+    url,
+    ...rest,
+    success: res => {
+      const data = res.data
+      if (!data.errcode) {
+        return Promise.resolve(data)
+      } else {
+        return Promise.reject(data)
+      }
+    },
+    fail: res => {
+      Promise.reject(`服务器错误: ${res}`)
+    }
+  })
 }
