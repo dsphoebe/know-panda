@@ -1,0 +1,6 @@
+<view class="questions">
+  <block wx:for="{{questions}}" wx:key="{{index}}">
+    <view class="q">{{index + 1}}. {{item.question}}</view>
+    <view class="a">{{item.answer}}</view>
+  </block>
+</view>
