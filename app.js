@@ -3,7 +3,7 @@ require('./init')
 
 App({
   onLaunch() {
-    if (wx.getStorage({key: 'uid'})) {
+    if (wx.getStorage({key: 'userInfo'})) {
       wx.navigateTo({
         url: '/app/index/index'
       })
@@ -37,18 +37,6 @@ App({
       })
   },
   saveUserInfo(userInfo) {
-    wx.request({
-      url: '/users',
-      method: 'POST',
-      body: {
-        data: userInfo
-      }
-    })
-      .then(res => {
-        wx.getStorage({
-          key: 'uid',
-          data: res.id
-        })
-      })
+    wx.setStorage({key: 'userInfo', value: userInfo})
   }
 })
