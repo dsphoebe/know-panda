@@ -1,5 +1,6 @@
 {
   "pages": [
+    "app/questions/questions",
     "app/index/index"
   ],
   "window":{
