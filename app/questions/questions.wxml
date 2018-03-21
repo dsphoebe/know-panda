@@ -1,0 +1,14 @@
+<view>
+  <block>
+    <text>胖哒是生日是哪天？</text>
+    <text>2017.3.26</text>
+  </block>
+  <block>
+    <text>胖哒是几个月长的牙齿</text>
+    <text>7个月</text>
+  </block>
+  <block>
+    <text>胖哒最爱吃啥</text>
+    <text>纸类</text>
+  </block>
+</view>
