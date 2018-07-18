@@ -1,5 +1,8 @@
 .questions {
   padding: 40rpx;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 .questions .a {
   visibility: hidden;
